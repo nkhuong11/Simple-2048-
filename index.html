@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2048</title>
+
+    <link rel="stylesheet" href="style/main.css" type="text/css"/>  
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="menu">
+        <div class="heading">
+            <div class="game-title">2048</div>
+            <div class="score-container">
+                <div id="score">
+                  SCORE
+                  <span class="main-score"></span>
+                </div>
+              </div>
+        </div>
+        
+
+        <div id="new-game-container">
+            <div class="game-side-container">
+                <input class="game-side" id="side" type="text" value="4" >
+                <div class="buttons-container">
+                  <div class="button" onclick="changeSide(1)">+</div>
+                  <div class="button" onclick="changeSide(-1)">-</div>
+                </div>
+            </div>
+            
+            <div id="new-game" onclick="new_game()">NEW GAME</div>    
+        </div>
+        
+      </div>
+
+      
+      
+    
+      <div id="grid-container" onmousedown="identifier(event, true)" onmouseup="identifier(event, false)"></div>
+    </div>
+    
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
