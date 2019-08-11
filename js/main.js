@@ -365,17 +365,20 @@ window.onkeydown = function(event){
 };
 
 window.onload = function(){
-  // var screen_height = window.screen.height;
-  // var screen_width = window.screen.width;
+  var devicePixelRatio = window.devicePixelRatio;
+  var screen_height = window.screen.height * devicePixelRatio;
+  var screen_width = window.screen.width * devicePixelRatio;
+  
+  console.log(window.devicePixelRatio);
   var menu_element = document.getElementById("menu");
   var grid_container = document.getElementById("grid-container");
-  // if (screen_height < screen_width) {
-  //   grid_container.style.height = (screen_height * 0.73) + "px";
-  //   grid_container.style.width = grid_container.style.height;
-  // } else {
-  //   grid_container.style.height = (screen_width * 0.95) + "px";
-  //   grid_container.style.width = grid_container.style.height;
-  // }
+  if (screen_height < screen_width) {
+    grid_container.style.height = (screen_height * 0.73) + "px";
+    grid_container.style.width = grid_container.style.height;
+  } else {
+    grid_container.style.height = (screen_width * 0.95) + "px";
+    grid_container.style.width = grid_container.style.height;
+  }
   
   grid_container.addEventListener('touchstart',touchStart,{passive : true});
   grid_container.addEventListener('touchend',touchEnd,{passive : true});
