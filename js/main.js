@@ -364,31 +364,13 @@ window.onkeydown = function(event){
   }
 };
 
-// window.onresize = function(){
-//   var menu_element = document.getElementById("menu");
-//   var grid_container = document.getElementById("grid-container");
-//   var gesture_element = document.getElementById("gesture");
-
-//   var min = Math.min(gesture_element.offsetHeight,document.getElementById("gesture").offsetWidth)-70;			
-//   menu_element.style.top="calc((100% - "+(min)+"px)/2 - 35px)";
-//   menu_element.style.width=min+"px";
-//   menu_element.style.left="calc((100% - "+min+"px)/2)";
-
-//   grid_container.style.height=min+"px";
-//   grid_container.style.width=min+"px";
-//   grid_container.style.top="calc((100% - "+(min)+"px)/2 + 35px)";
-//   grid_container.style.left="calc((100% - "+min+"px)/2)";
-
-//   gesture_element.style.width=min+"px";
-//   gesture_element.style.top="calc((100% - "+(min)+"px)/2 + 35px)";
-//   gesture_element.style.height=min+"px";
-//   gesture_element.style.left="calc((100% - "+min+"px)/2)";
-// };
-
 window.onload = function(){
   new_game();
   var menu_element = document.getElementById("menu");
   var grid_container = document.getElementById("grid-container");
+
+  grid_container.addEventListener('touchstart',touchStart,{passive : true});
+  grid_container.addEventListener('touchend',touchEnd,{passive : true});
 
   var min = Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70;
 
