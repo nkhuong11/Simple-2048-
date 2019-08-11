@@ -391,10 +391,10 @@ window.onload = function(){
 
  
   menu_element.style.left = "calc((100% - " + min + "px)/2)";
-  menu_element.style.top = "calc((100% - " + min + "px)/2 - 35px)";
+  menu_element.style.top = "calc((100% - " + min + "px)/2)";
   menu_element.style.width = min + "px";
   
-  grid_container.style.top = "calc((100% - " + min + "px)/2 + 35px)";
+  grid_container.style.top = "calc((100% - " + min + "px)/2)";
   grid_container.style.left = "calc((100% - " + min + "px)/2)";
   grid_container.style.height = min + "px";
   grid_container.style.width = min + "px"
