@@ -368,23 +368,26 @@ window.onload = function(){
   var devicePixelRatio = window.devicePixelRatio;
   var screen_height = window.screen.height * devicePixelRatio;
   var screen_width = window.screen.width * devicePixelRatio;
-  
+  var min;
 
   var menu_element = document.getElementById("menu");
   var grid_container = document.getElementById("grid-container");
   if (screen_height < screen_width) {
-    grid_container.style.height = (screen_height * 0.73) + "px";
+    min = screen_height * 0.65;
+    grid_container.style.height = min + "px";
     grid_container.style.width = grid_container.style.height;
+    
   } else {
-    grid_container.style.height = (screen_width * 0.95) + "px";
+    min = screen_width * 0.95;
+    grid_container.style.height = min + "px";
     grid_container.style.width = grid_container.style.height;
   }
   
   grid_container.addEventListener('touchstart',touchStart,{passive : true});
   grid_container.addEventListener('touchend',touchEnd,{passive : true});
 
-  var min = (Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70);
-  console.log(min);
+ 
+  console.log(min, grid_container.style.height);
 
  
   menu_element.style.left = "calc((100% - " + min + "px)/2)";
