@@ -369,7 +369,7 @@ window.onload = function(){
   var screen_height = window.screen.height * devicePixelRatio;
   var screen_width = window.screen.width * devicePixelRatio;
   
-  console.log(window.devicePixelRatio);
+
   var menu_element = document.getElementById("menu");
   var grid_container = document.getElementById("grid-container");
   if (screen_height < screen_width) {
@@ -383,7 +383,8 @@ window.onload = function(){
   grid_container.addEventListener('touchstart',touchStart,{passive : true});
   grid_container.addEventListener('touchend',touchEnd,{passive : true});
 
-  var min = (Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70) * devicePixelRatio;
+  var min = (Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70);
+  console.log(min);
 
  
   menu_element.style.left = "calc((100% - " + min + "px)/2)";
