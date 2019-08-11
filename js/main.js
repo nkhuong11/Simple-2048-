@@ -383,7 +383,7 @@ window.onload = function(){
   grid_container.addEventListener('touchstart',touchStart,{passive : true});
   grid_container.addEventListener('touchend',touchEnd,{passive : true});
 
-  var min = Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70;
+  var min = (Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - 70) * devicePixelRatio;
 
  
   menu_element.style.left = "calc((100% - " + min + "px)/2)";
