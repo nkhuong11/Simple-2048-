@@ -35,7 +35,6 @@ function new_game() {
 
       let tile = document.createElement("DIV");
       tile.setAttribute("class", "tile");
-      //tile.setAttribute("style", "width: calc(100%/" + GAME_SIDE + ");font-size: calc(100vmin/" + (GAME_SIDE + 8) + " - 10px)");
       
       tile_wrapper.appendChild(tile);
       grid_row.appendChild(tile_wrapper);
@@ -366,34 +365,27 @@ window.onkeydown = function(event){
 
 window.onload = function(){
   var devicePixelRatio = window.devicePixelRatio;
-  var screen_height = window.screen.height * devicePixelRatio;
-  var screen_width = window.screen.width * devicePixelRatio;
-  
+  var screen_height = (window.screen.height/16) * devicePixelRatio ;
+  var screen_width = (window.screen.width/16) * devicePixelRatio ;
 
   var menu_element = document.getElementById("menu");
   var grid_container = document.getElementById("grid-container");
   if (screen_height < screen_width) {
-    grid_container.style.height = (screen_height * 0.70) + "px";
-    grid_container.style.width = grid_container.style.height;
+    actual_width = (screen_height * 0.65) + "em";
+    grid_container.style.height = actual_width
+    grid_container.style.width = actual_width
+    menu_element.style.width = actual_width
+    // grid_container.style.height = "67.5em";
+    // grid_container.style.width = grid_container.style.height;
   } else {
-    grid_container.style.height = (screen_width * 0.90) + "px";
+    actual_width = (screen_height * 0.90) + "em";
+    grid_container.style.height = (screen_width * 0.90) + "em";
     grid_container.style.width = grid_container.style.height;
+    menu_element.style.width = actual_width
   }
   
   grid_container.addEventListener('touchstart',touchStart,{passive : true});
   grid_container.addEventListener('touchend',touchEnd,{passive : true});
-
-  var offset = 10 * devicePixelRatio;
-  var min = (Math.min(grid_container.offsetHeight, grid_container.offsetWidth) - (offset * 2));
-  console.log(grid_container.offsetHeight, grid_container.offsetWidth);
  
-  menu_element.style.left = "calc((100% - " + min + "px)/2)";
-  menu_element.style.top = "calc((100% - " + min + "px)/2 - " + offset + "px)";
-  menu_element.style.width = min + "px";
-  
-  grid_container.style.top = "calc((100% - " + min + "px)/2 + " + offset + "px)";
-  grid_container.style.left = "calc((100% - " + min + "px)/2)";
-  grid_container.style.height = min + "px";
-  grid_container.style.width = min + "px"
   new_game();
 };

@@ -24,14 +24,16 @@ div {
 
 .game-title {
   color: #776e65;
-  font-size: 90px;
+  font-size: 7em;
   font-weight: bold;
+  margin-left: 0.3em;
+
 }
 
 #menu {
   display: flex;
   flex-direction: column;
-  padding: 50px 0px 0px;
+  padding: 2em 0em 0em;
   background-color: transparent;
   z-index: 100;
 }
@@ -45,19 +47,19 @@ div {
 #score {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px 5px 20px;
+  padding: 0.625em 1.250em 0.313em 1.250em;
   font-size: 12px;
   font-weight: bold;
   color: white;
   background: #bbada0;
-  border-radius: 3px;
+  border-radius: 0.188em;
   max-width: 50vw;
   justify-content: center;
   align-items: center;
 }
 
 .main-score {
-  font-size: 25px;
+  font-size: 1.563em;
   font-weight: 800;
 }
 
@@ -70,12 +72,12 @@ div {
   -moz-animation-fill-mode: both;
 }
 
-#new-game-container {
+.new-game-container {
   display: flex;
   margin-left: auto;
   /* float: right; */
   text-align: right;
-  padding-bottom: 40px;
+  padding-bottom: 2.500em;
 
   
   /*justify-content: space-between;
@@ -87,22 +89,33 @@ div {
   font-size: 17px; */
 }
 
-#new-game {
+.new-game {
   background-color: #8f7a66;
-  border-radius: 3px;
-  padding: 15px;
-  margin-left: 18px;
+  border-radius: 0.188em;
+  padding: 0.938em;
+  margin-left: 1.125em;
   display: flex;
-  font-size: 15px;
+  font-size: 0.938em;
   font-weight: 600;
   color: white;
   cursor: pointer;
+  transition: 0.2s;
 }
+
+.new-game:hover {
+  background-color: #a18551;
+}
+
+.new-game:active {
+  background-color: #8f7a66;
+  transform: scale(1.2);
+}
+
 
 .game-side-container {
   display: flex;
   flex-direction: row;
-  height: 45px;
+  height: 2.813em;
 }
 
 .buttons-container {
@@ -116,18 +129,19 @@ div {
 }
 
 .button {
-  padding: 0 5px;
+  padding: 0 0.313em;
   width: 100%;
   height: 45%;
-  font-size: 15px;
+  font-size: 0.938em;
   font-weight: 600;
   justify-content: center;
   align-items: center;
   text-align: center;
   vertical-align: middle;
-  border-radius: 3px;
+  border-radius: 0.188em;
   background: #edce8e;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .button:hover {
@@ -136,6 +150,7 @@ div {
 
 .button:active {
   background: #edce8e;
+  transform: scale(1.2);
 }
 
 
@@ -143,18 +158,18 @@ div {
 
 .game-side {
   display: flex;
-  width: 30px;
+  width: 1.875em;
   height: 100%;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 0.188em;
   outline: none;
   border:0;
-  font-size: 14px;
+  font-size: 0.875em;
   background-color: #c7946b;
   color: white;			
   text-align: center;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 0.625em;
   
 }
 
@@ -176,7 +191,7 @@ div {
   position: relative;
   background-color:#CDC1B4;
   line-height: 0;
-  border-radius: 5px;
+  border-radius: 0.313em;
   z-index: 100;
 }
 
@@ -199,12 +214,12 @@ div {
 }
 
 .tile {
-  font-size: 300%;
+  font-size: 4vw;
   font-weight: 600;
   display:flex;
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0.313em;
   color: #776e65;;
   align-items: center;
   align-content: center;
