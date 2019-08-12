@@ -375,12 +375,10 @@ window.onload = function(){
     grid_container.style.height = actual_width
     grid_container.style.width = actual_width
     menu_element.style.width = actual_width
-    // grid_container.style.height = "67.5em";
-    // grid_container.style.width = grid_container.style.height;
   } else {
-    actual_width = (screen_height * 0.90) + "em";
-    grid_container.style.height = (screen_width * 0.90) + "em";
-    grid_container.style.width = grid_container.style.height;
+    actual_width = (screen_width * 0.80) + "em";
+    grid_container.style.height = actual_width
+    grid_container.style.width = actual_width;
     menu_element.style.width = actual_width
   }
   
